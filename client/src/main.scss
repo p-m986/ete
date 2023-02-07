@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+$primary: #f4a198;
+$dark-primary: #fa8679;
+$white: #fff;
+$smoke-white:rgb(185, 176, 176);
+$black: #000;
+$dark: #3f302e;
+$dark-light: #6d5250;
+$error: #ff6666;
+$small-font:  calc(0.8rem + 0.390625vw);
+$med-font: calc(1.3rem + 0.390625vw);
+
+body{
+    margin: 0;
+    padding:0;
+    font-family:'Source Sans Pro', sans-serif;
+    background-color: $primary;
+    color: $white;
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5{
+    margin:0;    
+}
+
+button, input, textarea{
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    background-color: $primary;
+    padding: 10px 20px;
+    border: none;
+    color: $white;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  
+    &:hover {
+      background-color: $dark;
+      cursor: pointer;
+    }
+  }
+  
+
+.auth{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+
+    &__box{
+        max-width: 500px;
+        width: 100%;
+        padding: 50px;
+        background-color: $dark-light;
+        color:$white;
+        border-radius: 5px;
+    }
+    
+    &__header{
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: $med-font;
+    }
+    
+    &__field{
+        margin-bottom: 8px;
+        label{
+            font-size:$small-font;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input{
+            background-color: $dark;
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            color: $white;
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    &__footer{
+        .btn{
+            width: 100%;
+        }
+    }
+    &__error{
+        color:$error;
+        text-align: center;
+        margin-bottom: 0.7rem;
+        font-size: 1rem;
+        visibility: hidden;
+    }
+    &__register{
+        margin-top: 5px;
+        margin-bottom:5px;
+        text-decoration: underline;
+        display: block;
+        font-size: $small-font;
+        color: $smoke-white;
+        text-align: right;
+        transition: all 0.3s ease;
+
+        &:hover{
+            color:$white;
+        }
+    }
+}
+.header{
+    font-size: $med-font;
+    color: $dark-primary;
+    background-color: $white;
+    height: 20vh;
+}
