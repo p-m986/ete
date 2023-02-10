@@ -1,33 +1,6 @@
 /* <-------------------------> */
 /* GLOBAL PROPERTIES */
 /* <-------------------------> */
-  /* button{
-    all: unset;
-    cursor: pointer;
-  }
-  i{
-    display: inline-block;
-  }
-  p{
-    display: inline-block;
-  }
-  li{
-    list-style: none;
-  }
-  ul{
-    display:inline-block;
-    cursor: pointer;
-  }
-  a{
-    all: unset;
-    text-decoration: none;
-    cursor: pointer;
-  
-    /* color: black; */
-  /* } */
-  /* a:hover{
-    color: #b3b3b3;
-  } */
   .margin-left-s{
     margin-left: 0.2em;
   }
@@ -57,30 +30,30 @@
   .disgrid{
     display: grid;
   }
-  .font-sizebig{
-    font-size: calc(1.8em + 0.390625vw);
-  }
-  .font-sizebig-m{
-    font-size: calc(1.3em + 0.390625vw);
-  }
-  .font-sizebig-n{
-    font-size: calc(1.1em + 0.390625Vmin);
-  }
-  .font-sizemed{
-    font-size: calc(0.9em + 0.390625Vmin);
-  }
-  .font-sizesml-n{
-    font-size: calc(0.6em + 0.390625Vmin);
-  }
-  .font-sizesml-m{
-    font-size: calc(0.7em + 0.390625Vmin);
-  }
-  .font-sizesml{
-    font-size: calc(0.5em + 0.390625Vmin);
-  }
-  .font-sizesml-ss{
-    font-size: calc(0.4em + 0.390625Vmin);
-  }
+  // .font-sizebig{
+  //   font-size: calc(1.8em + 0.390625vw);
+  // }
+  // .font-sizebig-m{
+  //   font-size: calc(1.3em + 0.390625vw);
+  // }
+  // .font-sizebig-n{
+  //   font-size: calc(1.1em + 0.390625Vmin);
+  // }
+  // .font-sizemed{
+  //   font-size: calc(0.9em + 0.390625Vmin);
+  // }
+  // .font-sizesml-n{
+  //   font-size: calc(0.6em + 0.390625Vmin);
+  // }
+  // .font-sizesml-m{
+  //   font-size: calc(0.7em + 0.390625Vmin);
+  // }
+  // .font-sizesml{
+  //   font-size: calc(0.5em + 0.390625Vmin);
+  // }
+  // .font-sizesml-ss{
+  //   font-size: calc(0.4em + 0.390625Vmin);
+  // }
   .Vcenter{
     align-items: center;
     justify-content: center;
@@ -108,16 +81,34 @@
   .div-verSpacing{
     margin-top: 3Vmin;
   }
-  
+$small-font:  calc(0.8rem + 0.390625vw);
+$subtitle-font: calc(0.7rem + 0.390625Vmin);
+$med-font: calc(1.3rem + 0.390625vw);
 
   /* <-------------------------> */
 /* FOOTER SECTION */
 /* <-------------------------> */
 #footer{
+    margin-top: 3Vmin;  
+    margin-bottom: 13Vmin;
     padding-top: 3Vmin;
     height: 30vh;
     grid-template-rows: 70% 10%;
   }
+
+  #footer li{
+    list-style-type: none;
+  }
+  #footer ul{
+    // margin: ;
+    padding: 0;
+    
+    & a{
+      text-decoration: none;
+      color: whitesmoke;
+    }
+  }
+
   #f-sectionOne{
     grid-template-columns: 33% 33% 33%;
   }
@@ -125,11 +116,34 @@
     margin-left: 40%;
   }
   #f-descr h2{
+    font-size: $med-font;
     margin-bottom: 5%;
-    color: #b9b9b9;
+    color: #ff2323;
+    transition: all ease-in-out 0.5s;
+
+    &:hover{
+      color: #ffffff;
+      font-size: calc($med-font + 0.003rem);
+      text-shadow:
+      -0.2px -0.2px 0 rgb(255, 13, 13),
+      0.2px -0.2px 0 rgb(255, 7, 7),
+      -0.2px 0.2px 0 rgb(252, 8, 8),
+      0.2px 0.2px 0 rgb(252, 1, 1); 
+    }
   }
   #f-descr p{
     max-width: 100%;
+    font-size: $subtitle-font;
+    transition: all ease-in-out 0.2s;
+
+    &:hover{
+      text-shadow:
+      -0.2px -0.2px 0 rgb(251, 246, 255),
+      0.2px -0.2px 0 rgb(237, 228, 244),
+      -0.2px 0.2px 0 rgb(249, 241, 255),
+      0.2px 0.2px 0 rgb(247, 241, 252); 
+      font-size: calc($subtitle-font + 0.001rem);
+    }
   }
   #information{
     align-items: center;
@@ -140,8 +154,20 @@
   #information li ul{
     display: block;
     cursor: pointer;
+    font-size: $subtitle-font;
+    transition: all ease-in-out 0.1s;
+    &:hover{
+      text-decoration: underline;
+      text-shadow:
+      -0.2px -0.2px 0 rgb(251, 246, 255),
+      0.2px -0.2px 0 rgb(237, 228, 244),
+      -0.2px 0.2px 0 rgb(249, 241, 255),
+      0.2px 0.2px 0 rgb(247, 241, 252); 
+      font-size: calc($subtitle-font + 0.001rem);
+    }
   }
   #information h5{
+    font-size: $small-font;
     margin-bottom: 5%;
   }
   
@@ -150,6 +176,19 @@
   }
   #contactUs h5{
     margin-bottom:3%;
+    font-size: $small-font;
+  }
+  #contactUs p{
+    font-size: $subtitle-font;
+    transition: all ease-in-out 0.2s;
+    &:hover{
+      text-shadow:
+      -0.2px -0.2px 0 rgb(251, 246, 255),
+      0.2px -0.2px 0 rgb(237, 228, 244),
+      -0.2px 0.2px 0 rgb(249, 241, 255),
+      0.2px 0.2px 0 rgb(247, 241, 252); 
+      font-size: calc($subtitle-font + 0.001rem);
+    }
   }
   
   #iconSection{
