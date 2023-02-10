@@ -13,16 +13,19 @@
 $small-font:  calc(0.8rem + 0.390625vw);
 $subtitle-font: calc(0.7rem + 0.390625Vmin);
 $med-font: calc(1.3rem + 0.390625vw);
+$embossed-topright-light: 0px -1px 1px rgba(255, 241, 241, 0.5), 0px 1px 5px rgba(0,0,0, 0.5);
 
   /* <-------------------------> */
 /* FOOTER SECTION */
 /* <-------------------------> */
 #footer{
+    border-top: 1px solid #ffffff;
+    box-shadow: $embossed-topright-light;
     margin-top: 3Vmin;  
-    margin-bottom: 13Vmin;
+    margin-bottom: 60px;
     padding-top: 3Vmin;
-    height: 30vh;
-    grid-template-rows: 70% 10%;
+    padding-bottom: 20px;
+    height: auto;
   }
 
   #footer li{
@@ -47,7 +50,7 @@ $med-font: calc(1.3rem + 0.390625vw);
   #f-descr h2{
     font-size: $med-font;
     margin-bottom: 5%;
-    color: #ff2323;
+    color: #ffae4a;
     transition: all ease-in-out 0.5s;
 
     &:hover{
@@ -84,6 +87,7 @@ $med-font: calc(1.3rem + 0.390625vw);
     display: block;
     cursor: pointer;
     font-size: $subtitle-font;
+    margin-bottom: 5px;
     transition: all ease-in-out 0.1s;
     &:hover{
       text-decoration: underline;
@@ -109,6 +113,7 @@ $med-font: calc(1.3rem + 0.390625vw);
   }
   #contactUs p{
     font-size: $subtitle-font;
+    margin-bottom: 5px;
     transition: all ease-in-out 0.2s;
     &:hover{
       text-shadow:
@@ -119,14 +124,3 @@ $med-font: calc(1.3rem + 0.390625vw);
       font-size: calc($subtitle-font + 0.001rem);
     }
   }
-  
-  #iconSection{
-    flex-direction: row-reverse;
-    margin-right: 10Vmin;
-    max-height: 70%;
-  }
-  
-  
-  
-  
-  

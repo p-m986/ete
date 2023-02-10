@@ -24,14 +24,6 @@ const Footer = () => {
           <p className = "">Email : support@whatever.com</p>
         </div>
       </div>
-      <div id = "f-sectionTwo" className = "disgird">
-        <div id = "iconSection" className = "disflex">
-          {/* <img className = "margin-left-s"src= {paypalLogo} alt = "Paypal"/>
-          <img className = "margin-left-s"src= {westernUnionLogo} alt = "WesternUnion"/>
-          <img className = "margin-left-s"src= {visaLogo} alt = "Visa"/>
-          <img className = "margin-left-s"src= {mastercardLogo} alt = "MasterCard"/> */}
-        </div>
-      </div>
     </div>
   )
 }

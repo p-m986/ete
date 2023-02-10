@@ -11,21 +11,22 @@ $error: #ff6666;
 
 $gradient-blue:linear-gradient(to bottom, #ccffff 45%, #ffcc99 128%);
 $gradient-body:linear-gradient(to top left, #33ccff -45%, #ff6666 135%);;
-
+$gradient-whiteGrey: linear-gradient(to top right, #ccffff -30%, #ffffff 100%);
 $small-font:  calc(0.8rem + 0.390625vw);
+$smaller-font: calc(0.6rem + 00.390625vw);
 $med-font: calc(1.3rem + 0.390625vw);
+$page-heading: calc(2rem + 00.390625vw);
 
 $highlight-white: -0.2px -0.2px 0 rgb(244, 235, 251),0.2px -0.2px 0 rgb(247, 247, 247),-0.2px 0.2px 0 rgb(227, 227, 227),0.2px 0.2px 0 rgb(255, 255, 255); 
 
-
-$embossed-topright-light: -3px 2px 5px rgba(0,0,0,0.5),
-1px -0.5px 1px rgba(255, 255, 255, 0.5);
+$embossed-topright-light: -3px 2px 5px rgba(0,0,0,0.5),1px -0.5px 1px rgba(255, 255, 255, 0.5);
+$embossed-topright-light-pretransition: -1px 0.5px 0.5px rgba(0,0,0,0.3), 0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3);
 
 body{
     margin: 0;
     padding:0;
     font-family:'Source Sans Pro', sans-serif;
-    background: linear-gradient(to top left, #33ccff -5%, #ff6666 100%);
+    background: $gradient-body;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-width: 400px;
@@ -37,7 +38,10 @@ body{
         display: none;  /* Safari and Chrome */
     }
 }
-
+.loader{
+    min-height: 70Vmin;
+    margin: 30px;
+}
 *, *:before, *:after{
     box-sizing: border-box;
 }
@@ -46,7 +50,7 @@ p, h1, h2, h3, h4, h5{
     margin:0;    
 }
 
-ul{ margin-left: 0; padding-left: 0; }
+ul{ margin: 0; padding: 0; }
 
 p{
     display: inline-block;
@@ -100,10 +104,11 @@ button, input, textarea{
 /* Top navigation Bar */
 #topBar{
     height: 20vh;
-    width: 98vw;
+    width: 100vw;
     border: none;
     position: sticky;
-    grid-template-rows: 20% 60% 20%;
+    margin-top: 15px;
+    grid-template-rows: 35% 30% 35%;
 
     li{
         list-style: none;
@@ -115,20 +120,26 @@ button, input, textarea{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    grid-template-columns: 35% 30% 35%;
-
-    
+    grid-template-columns: 20% 60% 20%;
   }
 
-  #sO-leftDiv li ul{
-    padding: 2px;
-    color: $dark-light; 
-    transition: all ease-in-out 0.2s;
-    &:hover{
-        color: $smoke-white;
-        // text-shadow: $highlight-white;
-    }
-  }
+#sO-leftDiv{
+    li{
+         ul{
+            padding: 2px;
+            font-size: $smaller-font;
+            color: $white; 
+            transition: all ease-in-out 0.2s;
+            i{
+                margin-right: 5px;
+            }
+            &:hover{
+                cursor: pointer;
+                color: $smoke-white;
+            }
+        }
+    } 
+}
   
 
 #sO-rightDiv {
@@ -139,9 +150,13 @@ button, input, textarea{
         // display: inline-block;
     }
     ul{
+        font-size: $smaller-font;
+        color: $white;
         padding: 2px;
+        margin-left: 10px;
         transition: all ease-in-out 0.2s;
         &:hover{
+            cursor: pointer;
             color: $smoke-white;
             // text-shadow: $highlight-white;
         }
@@ -151,33 +166,44 @@ button, input, textarea{
   #tB-sectionTwo{
     justify-content: center;
     position: relative;
-    padding-top: 1.5%;
+    h2{
+        font-size: $page-heading;
+        &:hover{
+            cursor:pointer;
+        }
+    }
   }
-  .altClass{
-    position: relative;
-    color: red;
-    line-height: 50px;
-  }
-  #tB-sectionTwo img{
-    padding-top: calc(2.5Vmin);
-    height: 45%;
-  }
+
   
   /* Top navigation bar SectionThree */
   #tB-sectionThree{
     height: 100%;
     width: 100%;
+    margin-top: 10px;
     box-sizing: border-box;
-    /* border-bottom: 0.3px solid rgba(179, 179, 179, 0.3); */
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 35% 30% 35%;
+
+    li{
+        ul{
+            font-size: $smaller-font;
+            padding: 5px;
+            border-radius: 2px;
+            box-shadow: $embossed-topright-light-pretransition;
+            transition: all ease-in-out 0.3s;
+            &:hover{
+                cursor: pointer;
+                box-shadow: $embossed-topright-light;
+            }
+            i{
+                margin-left: 10px;
+            }
+        }
+    }
+
   }
   
-  #sT-navbar{
+#sT-navbar{
     grid-template-columns: 50% 50%;
-  }
-  .hover-navbar:hover{
-    color:#b9b9b9;
-    
 }
 
 
@@ -245,12 +271,12 @@ button, input, textarea{
         visibility: hidden;
     }
     &__register{
-        margin-top: 5px;
+        margin-top: 15px;
         margin-bottom:5px;
         text-decoration: underline;
         display: block;
         font-size: $small-font;
-        color: $smoke-white;
+        color: $white;
         text-align: right;
         transition: all 0.3s ease;
 
@@ -264,4 +290,54 @@ button, input, textarea{
     color: $dark-primary;
     background-color: $white;
     height: 20vh;
+}
+
+// **************Profile Section********************
+// *************************************************
+
+.pro{
+    min-height: 40Vmin;
+    display: grid;
+    margin-top: 10Vmin;
+    margin-bottom: 10Vmin;
+    grid-template-columns: 60% 40%;
+    border-radius: 5px;
+    background: linear-gradient(to top left, #ccffff -34%, #ffcccc 139%);
+    color: #635856;
+    box-shadow: $embossed-topright-light;
+    &__infobox{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 10%;
+    }
+
+    &__header{
+        margin: 5px;
+        color: #ffae4a;
+        font-weight: bold;
+        font-size: $med-font;
+    }
+
+    &__email{
+        margin: 5px;
+        margin-left: 3%;
+        font-size: $small-font;
+    }
+
+    &__createdat{
+        margin: 5px;
+        margin-left: 3%;
+        font-size: $small-font;
+    }
+}
+.ord{
+    display: flex;
+    margin-top: 10Vmin;
+    margin-bottom: 10Vmin;
+    min-height: 30Vmin;
+    color: #635856;
+    border-radius: 3px;
+    box-shadow: $embossed-topright-light;
+    background: linear-gradient(to top left, #ccffff -34%, #ffcccc 139%);
 }
