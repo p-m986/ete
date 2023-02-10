@@ -1,21 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
-$primary: #f4a198;
-$dark-primary: #fa8679;
+$primary: #f3b8b2;
+$dark-primary: #edb3ad;
 $white: #fff;
 $smoke-white:rgb(185, 176, 176);
 $black: #000;
 $dark: #3f302e;
-$dark-light: #6d5250;
+$dark-light: #f8d3d3;
 $error: #ff6666;
+
+$gradient-blue:linear-gradient(to bottom, #ccffff 45%, #ffcc99 128%);
+$gradient-body:linear-gradient(to top left, #33ccff -45%, #ff6666 135%);;
+
 $small-font:  calc(0.8rem + 0.390625vw);
 $med-font: calc(1.3rem + 0.390625vw);
+
+$highlight-white: -0.2px -0.2px 0 rgb(244, 235, 251),0.2px -0.2px 0 rgb(247, 247, 247),-0.2px 0.2px 0 rgb(227, 227, 227),0.2px 0.2px 0 rgb(255, 255, 255); 
+
+
+$embossed-topright-light: -3px 2px 5px rgba(0,0,0,0.5),
+1px -0.5px 1px rgba(255, 255, 255, 0.5);
 
 body{
     margin: 0;
     padding:0;
     font-family:'Source Sans Pro', sans-serif;
     background: linear-gradient(to top left, #33ccff -5%, #ff6666 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-width: 400px;
     color: $white;
     overflow-y: scroll;
     -ms-overflow-style: none; 
@@ -31,6 +44,26 @@ body{
 
 p, h1, h2, h3, h4, h5{
     margin:0;    
+}
+
+ul{ margin-left: 0; padding-left: 0; }
+
+p{
+    display: inline-block;
+}
+
+.disflex{ 
+    display: flex;
+} 
+.disgrid{ 
+    display: grid;
+} 
+.Vcenter{ 
+    align-items: center;  
+    justify-content: center;  
+} 
+.flex-right{  
+    flex-direction: row-reverse;  
 }
 
 button, input, textarea{
@@ -61,24 +94,116 @@ button, input, textarea{
   }
   
 
+// **************Header Section*********************
+// *************************************************
+
+/* Top navigation Bar */
+#topBar{
+    height: 20vh;
+    width: 98vw;
+    border: none;
+    position: sticky;
+    grid-template-rows: 20% 60% 20%;
+
+    li{
+        list-style: none;
+    }
+  }
+  
+  /* Top navigation bar SectionOne*/
+  #tB-sectionOne{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    grid-template-columns: 35% 30% 35%;
+
+    
+  }
+
+  #sO-leftDiv li ul{
+    padding: 2px;
+    color: $dark-light; 
+    transition: all ease-in-out 0.2s;
+    &:hover{
+        color: $smoke-white;
+        // text-shadow: $highlight-white;
+    }
+  }
+  
+
+#sO-rightDiv {
+    li{
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        // display: inline-block;
+    }
+    ul{
+        padding: 2px;
+        transition: all ease-in-out 0.2s;
+        &:hover{
+            color: $smoke-white;
+            // text-shadow: $highlight-white;
+        }
+    }
+}  
+  /* Topnavigation bar SectionTwo */
+  #tB-sectionTwo{
+    justify-content: center;
+    position: relative;
+    padding-top: 1.5%;
+  }
+  .altClass{
+    position: relative;
+    color: red;
+    line-height: 50px;
+  }
+  #tB-sectionTwo img{
+    padding-top: calc(2.5Vmin);
+    height: 45%;
+  }
+  
+  /* Top navigation bar SectionThree */
+  #tB-sectionThree{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    /* border-bottom: 0.3px solid rgba(179, 179, 179, 0.3); */
+    grid-template-columns: 25% 50% 25%;
+  }
+  
+  #sT-navbar{
+    grid-template-columns: 50% 50%;
+  }
+  .hover-navbar:hover{
+    color:#b9b9b9;
+    
+}
+
+
+// **************Login/Register Section ************
+// *************************************************
+
 .auth{
     display: flex;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10Vmin;
+    margin-bottom: 10Vmin;
     align-items: center;
     justify-content: center;
 
     &__box{
+        border: white 1px solid;
         max-width: 500px;
         width: 100%;
         padding: 50px;
-        background-color: $dark-light;
         color:$white;
         border-radius: 5px;
+        box-shadow: $embossed-topright-light
     }
     
     &__header{
         margin-bottom: 20px;
+        font-weight: 900;
         text-align: center;
         font-size: $med-font;
     }
@@ -89,15 +214,17 @@ button, input, textarea{
             font-size:$small-font;
             display: block;
             margin-bottom: 5px;
+            text-shadow: $highlight-white; 
         }
 
         input{
-            background-color: $dark;
+            // background-color: $;
+            background-color: none;
             width: 100%;
             padding: 8px;
             border: none;
             border-radius: 5px;
-            color: $white;
+            color: $dark;
 
             &:focus{
                 outline: none;

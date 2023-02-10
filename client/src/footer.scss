@@ -1,75 +1,4 @@
-/* <-------------------------> */
-/* GLOBAL PROPERTIES */
-/* <-------------------------> */
-  .margin-left-s{
-    margin-left: 0.2em;
-  }
-  .margin-left-m{
-    margin-left: 0.8em;
-  }
-  .margin-left-l{
-    margin-left: calc(10px + 1Vmin);
-  }
-  .FILLER-DIV{
-    height: 100%;
-    width: 100%;
-    border: none;
-  }
-  .padding-small{
-    padding: 0.2em;
-  }
-  .padding-med{
-    padding: 0.5em;
-  }
-  .padding-large{
-    padding: calc(10px + 1Vmin);
-  }
-  .disflex{
-    display: flex;
-  }
-  .disgrid{
-    display: grid;
-  }
-  // .font-sizebig{
-  //   font-size: calc(1.8em + 0.390625vw);
-  // }
-  // .font-sizebig-m{
-  //   font-size: calc(1.3em + 0.390625vw);
-  // }
-  // .font-sizebig-n{
-  //   font-size: calc(1.1em + 0.390625Vmin);
-  // }
-  // .font-sizemed{
-  //   font-size: calc(0.9em + 0.390625Vmin);
-  // }
-  // .font-sizesml-n{
-  //   font-size: calc(0.6em + 0.390625Vmin);
-  // }
-  // .font-sizesml-m{
-  //   font-size: calc(0.7em + 0.390625Vmin);
-  // }
-  // .font-sizesml{
-  //   font-size: calc(0.5em + 0.390625Vmin);
-  // }
-  // .font-sizesml-ss{
-  //   font-size: calc(0.4em + 0.390625Vmin);
-  // }
-  .Vcenter{
-    align-items: center;
-    justify-content: center;
-  }
-  .flex-right{
-    flex-direction: row-reverse;
-  }
-  .stroke
-  {
-      text-shadow:
-      -0.5px -0.5px 0 rgb(200, 174, 222),
-      0.5px -0.5px 0 rgb(200, 174, 222),
-      -0.5px 0.5px 0 rgb(200, 174, 222),
-      0.5px 0.5px 0 rgb(200, 174, 222);  
-  }
-  .wiggle{
+.wiggle{
       animation: wiggle 2s linear;  
   }
   .colorBlack{
@@ -113,7 +42,7 @@ $med-font: calc(1.3rem + 0.390625vw);
     grid-template-columns: 33% 33% 33%;
   }
   #f-descr{
-    margin-left: 40%;
+    margin-left: 20%;
   }
   #f-descr h2{
     font-size: $med-font;
