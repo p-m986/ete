@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
-$primary: #f3b8b2;
-$dark-primary: #edb3ad;
+$primary: #f6d1cc;
+$dark-primary: #f3d1cd;
 $white: #fff;
 $smoke-white:rgb(185, 176, 176);
 $black: #000;
 $dark: #3f302e;
-$dark-light: #f8d3d3;
+$dark-light: #f7e4e4;
 $error: #ff6666;
 
 $gradient-blue:linear-gradient(to bottom, #ccffff 45%, #ffcc99 128%);
 $gradient-body:linear-gradient(to top left, #33ccff -45%, #ff6666 135%);;
 $gradient-whiteGrey: linear-gradient(to top right, #ccffff -30%, #ffffff 100%);
 $small-font:  calc(0.8rem + 0.390625vw);
-$smaller-font: calc(0.6rem + 00.390625vw);
+$smaller-font: calc(0.5rem + 00.390625vw);
 $med-font: calc(1.3rem + 0.390625vw);
 $page-heading: calc(2rem + 00.390625vw);
 
@@ -26,11 +26,11 @@ body{
     margin: 0;
     padding:0;
     font-family:'Source Sans Pro', sans-serif;
-    background: $gradient-body;
+    background: $gradient-whiteGrey;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-width: 400px;
-    color: $white;
+    color: $black;
     overflow-y: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
@@ -39,8 +39,10 @@ body{
     }
 }
 .loader{
-    min-height: 70Vmin;
-    margin: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    // min-height: 70Vmin;
+    // margin: 30px;
 }
 *, *:before, *:after{
     box-sizing: border-box;
@@ -128,7 +130,7 @@ button, input, textarea{
          ul{
             padding: 2px;
             font-size: $smaller-font;
-            color: $white; 
+            // color: $white; 
             transition: all ease-in-out 0.2s;
             i{
                 margin-right: 5px;
@@ -151,7 +153,7 @@ button, input, textarea{
     }
     ul{
         font-size: $smaller-font;
-        color: $white;
+        // color: $white;
         padding: 2px;
         margin-left: 10px;
         transition: all ease-in-out 0.2s;
@@ -207,6 +209,153 @@ button, input, textarea{
 }
 
 
+// **************Home Section***********************
+// *************************************************
+
+.home{
+    height: 250Vmin;
+    display: grid;
+    overflow: hidden;
+    // color: $black;
+    border-radius: 4px;
+    grid-template-rows: 30% 20% 30% 20%;
+    
+    &__coverpage{
+        padding: 10px;
+        margin-bottom: 3px;
+        max-width: 100%;
+        max-height: 100%;
+        display: grid;
+        border-radius: 4px;
+
+        background: $dark-light;
+        grid-template-columns: 50% 50%;
+
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+
+    &__infobox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p{
+            font-weight: 600;
+            font-size: $med-font;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            font-weight: 400;
+            color: #ff9a57;
+        }
+    }
+
+    &__featured{
+        display: grid;
+        grid-template-rows: 15% 84%;
+    }
+
+    &__perks{
+        display: grid;
+    }
+
+.featured_title{
+    font-size: $small-font;
+}
+.featured_descr{
+    font-size: $smaller-font;
+}
+    #hp-sub-container{
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 50% 50%;
+        background-color: #2E90E5;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      
+      #hp-sub-descr{
+        position: relative;
+        height: 100%;
+        max-width: 45%;
+        overflow: hidden;
+        margin-left: 40%;
+        margin-top: calc(10Vmax - 5Vmin);
+        letter-spacing: 2px;
+        color:whitesmoke;
+      }
+      
+      #hp-sub-descr p{
+        margin-bottom: 10%;
+      }
+      
+      #hp-sub-descr a{
+        color: whitesmoke;
+        border-bottom: 1px solid white;
+        display: inline;
+        font-size: $smaller-font;
+        cursor: pointer;
+      }
+      
+      #hp-sub-descr *{
+        display: block;
+        overflow: hidden;
+      }
+      
+      #hp-sub-imgContainer{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      #hp-sub-imgContainer img{
+        height: 100%;
+        width: 70%;
+        /* margin-top: -13.6%; */
+      }
+      
+      #hp-sf-container{
+        grid-template-columns: 30% 30% 30%;
+        margin-left: 10%;
+        /* margin-right: 0; */
+      }
+      
+      .detailsCard{
+        height: 100%;
+        max-width: 80%;
+        grid-template-rows: 30% 20% 50%;
+        overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+      }
+      .sf-title{
+        margin-bottom: 5%;
+        padding: calc(1Vmax - 0.38Vmin);
+      }
+      
+      .sf-content{
+        padding: calc(1Vmax - 0.38Vmin);
+      }
+      .hp-sf-imgcontainer img{
+        max-width: 50%;
+        max-height: 50%;
+      }
+      
+}
+
 // **************Login/Register Section ************
 // *************************************************
 
@@ -222,7 +371,7 @@ button, input, textarea{
         max-width: 500px;
         width: 100%;
         padding: 50px;
-        color:$white;
+        // color:$white;
         border-radius: 5px;
         box-shadow: $embossed-topright-light
     }
@@ -250,10 +399,10 @@ button, input, textarea{
             padding: 8px;
             border: none;
             border-radius: 5px;
-            color: $dark;
+            // color: $dark;
 
             &:focus{
-                outline: none;
+                outline:invert;
             }
         }
     }
@@ -276,7 +425,7 @@ button, input, textarea{
         text-decoration: underline;
         display: block;
         font-size: $small-font;
-        color: $white;
+        // color: $black;
         text-align: right;
         transition: all 0.3s ease;
 
@@ -336,7 +485,7 @@ button, input, textarea{
     margin-top: 10Vmin;
     margin-bottom: 10Vmin;
     min-height: 30Vmin;
-    color: #635856;
+    // color: #635856;
     border-radius: 3px;
     box-shadow: $embossed-topright-light;
     background: linear-gradient(to top left, #ccffff -34%, #ffcccc 139%);

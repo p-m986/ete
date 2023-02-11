@@ -37,7 +37,7 @@ $embossed-topright-light: 0px -1px 1px rgba(255, 241, 241, 0.5), 0px 1px 5px rgb
     
     & a{
       text-decoration: none;
-      color: whitesmoke;
+      color: rgb(81, 81, 81);
     }
   }
 
@@ -54,13 +54,13 @@ $embossed-topright-light: 0px -1px 1px rgba(255, 241, 241, 0.5), 0px 1px 5px rgb
     transition: all ease-in-out 0.5s;
 
     &:hover{
-      color: #ffffff;
+      color: #7f7e7e;
       font-size: calc($med-font + 0.003rem);
       text-shadow:
-      -0.2px -0.2px 0 rgb(255, 13, 13),
-      0.2px -0.2px 0 rgb(255, 7, 7),
-      -0.2px 0.2px 0 rgb(252, 8, 8),
-      0.2px 0.2px 0 rgb(252, 1, 1); 
+      -0.2px -0.2px 0 rgb(140, 140, 140),
+      0.2px -0.2px 0 rgb(116, 115, 115),
+      -0.2px 0.2px 0 rgb(0, 0, 0),
+      0.2px 0.2px 0 rgb(0, 0, 0); 
     }
   }
   #f-descr p{
